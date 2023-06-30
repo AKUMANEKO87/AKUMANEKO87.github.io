@@ -23,15 +23,6 @@ const getRealPath = (pathname, desc = false) => {
 };
 
 (function ($) {
-  // lazysizes
-  const imgs = $('.article-entry img');
-  imgs.each(function() {
-    const src = $(this).attr('src');
-    $(this).addClass('lazyload');
-    $(this).removeAttr('src');
-    $(this).attr('data-src', src);
-    $(this).attr('data-sizes','auto');
-  })
   // Share
   $('body').on('click', function () {
     $('.article-share-box.on').removeClass('on');
@@ -46,7 +37,7 @@ const getRealPath = (pathname, desc = false) => {
       offset = $this.offset();
 
     if ($('#' + id).length) {
-      var box = $('#' + id);
+      let box = $('#' + id);
 
       if (box.hasClass('on')) {
         box.removeClass('on');
@@ -65,7 +56,7 @@ const getRealPath = (pathname, desc = false) => {
         '</div>'
       ].join('');
 
-      var box = $(html);
+      let box = $(html);
 
       $('body').append(box);
     }
